@@ -21,7 +21,8 @@ func createEpicMiddleware(rootEpic: Epic) -> Middleware<RootState> {
     let outputActions = rootEpic(inputActions)
     
     return { dispatch, getState in
-        outputActions
+        let _ = outputActions
+            .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { action in
                 dispatch(action)
             })

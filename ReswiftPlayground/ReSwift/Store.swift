@@ -13,7 +13,7 @@ import RxSwift
 let repository: RandomColorRepository = RandomColorRepository()
 let colorEpics = ColorEpics(repository: repository)
 
-let rootEpic = combineEpics(epics: colorEpics.epics())
+let rootEpic = combineEpics(epics: colorEpics.epics)
 let epicMiddleware = createEpicMiddleware(rootEpic: rootEpic)
 
 

@@ -17,8 +17,9 @@ class ColorEpics {
         self.repository = repository
     }
     
-    func fetchColorEpic()-> Epic {
+    lazy var fetchRandomColorEpic: Epic = {
         return { (actionObservable: Observable<Action>) in
+            
             return actionObservable.filter({ (action: Action) -> Bool in
                 let isOfType = action is FetchRandomColor
                 return isOfType
@@ -33,9 +34,7 @@ class ColorEpics {
                         })
                 })
         }
-    }
+    }()
     
-    func epics() -> [Epic] {
-        return [fetchColorEpic()]
-    }
+    var epics: [Epic] { return [fetchRandomColorEpic] }
 }
