@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13122.16" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReswiftPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,9 +21,58 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQD-T4-E84">
+                                <rect key="frame" x="885" y="511" width="150" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="exL-hd-CcC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IS-Q0-FdS">
+                                <rect key="frame" x="476" y="497" width="159" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Less"/>
+                                <connections>
+                                    <action selector="lessClicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="AcJ-R0-aSu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ki-LF-0n5">
+                                <rect key="frame" x="1285" y="497" width="169" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="More"/>
+                                <connections>
+                                    <action selector="moreClicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Z8h-nd-3SS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvQ-cy-bW8">
+                                <rect key="frame" x="476" y="744" width="978" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Random Color"/>
+                                <connections>
+                                    <action selector="randomColor:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="p5Z-Gu-vjJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CQD-T4-E84" firstAttribute="leading" secondItem="1IS-Q0-FdS" secondAttribute="trailing" constant="250" id="0Ph-ms-Kns"/>
+                            <constraint firstItem="YvQ-cy-bW8" firstAttribute="leading" secondItem="1IS-Q0-FdS" secondAttribute="leading" id="4cA-U5-UJp"/>
+                            <constraint firstItem="CQD-T4-E84" firstAttribute="centerY" secondItem="wu6-TO-1qx" secondAttribute="centerY" id="K6h-J9-ftd"/>
+                            <constraint firstItem="1ki-LF-0n5" firstAttribute="leading" secondItem="CQD-T4-E84" secondAttribute="trailing" constant="250" id="YBh-TM-8QS"/>
+                            <constraint firstItem="CQD-T4-E84" firstAttribute="centerX" secondItem="wu6-TO-1qx" secondAttribute="centerX" id="cLW-0J-cHz"/>
+                            <constraint firstItem="1ki-LF-0n5" firstAttribute="centerY" secondItem="CQD-T4-E84" secondAttribute="centerY" id="tMc-f3-yTk"/>
+                            <constraint firstItem="1IS-Q0-FdS" firstAttribute="centerY" secondItem="CQD-T4-E84" secondAttribute="centerY" id="xPG-C1-BHg"/>
+                            <constraint firstItem="YvQ-cy-bW8" firstAttribute="top" secondItem="CQD-T4-E84" secondAttribute="bottom" constant="175" id="yRd-DJ-p5c"/>
+                            <constraint firstItem="YvQ-cy-bW8" firstAttribute="trailing" secondItem="1ki-LF-0n5" secondAttribute="trailing" id="yng-99-vZA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="CQD-T4-E84" id="Mav-Oy-oFP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
